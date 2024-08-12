@@ -22,5 +22,7 @@ Route::get('/home', function(){
     return view('backend.home.home');
 });
 
+Route::get('/category/create', [\App\Http\Controllers\CategoryController::class, 'create']);
+
 Route::get('/product/list', [\App\Http\Controllers\productController::class, 'index']);
 Route::get('/product/form', [\App\Http\Controllers\productController::class, 'maformho']);
