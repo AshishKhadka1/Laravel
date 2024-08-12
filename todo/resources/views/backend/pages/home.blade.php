@@ -1,1 +1,4 @@
-<h3>sdfsdf</h3>
+@extends('backend.main')
+@section('content')
+<h2>This is home page</h2>
+@endsection
