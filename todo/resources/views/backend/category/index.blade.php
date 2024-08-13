@@ -56,7 +56,7 @@
                     <td>{{$c->title}}
                     </td>
                     <td>{{$c->description}}</td>
-                    <td> <button class="btn btn-danger btn-sm mr-3">Edit</button>
+                    <td> <a href="/category/edit/{{$c->id}}" class="btn btn-danger btn-sm mr-3">Edit</a>
                     <button class="btn btn-primary btn-sm">Delete</button></td>
 
                   </tr>
