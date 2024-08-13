@@ -27,6 +27,8 @@ Route::get('/category/create', [\App\Http\Controllers\CategoryController::class,
 
 Route::get('/category/edit/{id}', [\App\Http\Controllers\CategoryController::class, 'edit']);
 
+Route::get('/category/delete/{id}', [\App\Http\Controllers\CategoryController::class, 'destroy']);
+
 Route::post('/category/update/{id}', [\App\Http\Controllers\CategoryController::class, 'update']);
 
 Route::post('/category/store', [\App\Http\Controllers\CategoryController::class, 'store']);
