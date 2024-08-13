@@ -12,7 +12,7 @@
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Category </li>
+              <li class="breadcrumb-item active">Edit Form </li>
             </ol>
           </div>
         </div>
@@ -28,20 +28,20 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Category</h3>
+                <h3 class="card-title">Edit Category</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/category/store" method="post">
+              <form action="/category/update/{{$category->id}}" method="post">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
-                    <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Enter title">
+                    <input type="text" name="title" class="form-control" id="exampleInputEmail1" value="{{$category->title}}" placeholder="Enter title">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Description</label>
-                    <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="Enter Desc">
+                    <input type="text" name="description" class="form-control" id="exampleInputPassword1" value="{{$category->description}}" placeholder="Enter Desc">
                   </div>
                   <!-- <div class="form-group">
                     <label for="exampleInputFile">File input</label>
