@@ -27,11 +27,15 @@ Route::get('/category/create', [\App\Http\Controllers\CategoryController::class,
 
 Route::get('/category/edit/{id}', [\App\Http\Controllers\CategoryController::class, 'edit']);
 
-Route::get('/category/update', [\App\Http\Controllers\CategoryController::class, 'update']);
+Route::post('/category/update/{id}', [\App\Http\Controllers\CategoryController::class, 'update']);
 
 Route::post('/category/store', [\App\Http\Controllers\CategoryController::class, 'store']);
 
 
+Route::get('/category/index', [\App\Http\Controllers\CategoryController::class, 'index']);
+
+
+
 // normal
-Route::get('/product/list', [\App\Http\Controllers\productController::class, 'index']);
+// Route::get('/product/list', [\App\Http\Controllers\productController::class, 'index']);
 Route::get('/product/form', [\App\Http\Controllers\productController::class, 'maformho']);

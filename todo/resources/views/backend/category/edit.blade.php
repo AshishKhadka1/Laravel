@@ -32,6 +32,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+               
               <form action="/category/update/{{$category->id}}" method="post">
                 @csrf
                 <div class="card-body">

@@ -12,7 +12,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = Category::all();
+        
+        return view('backend.category.index', compact('category'));
+
     }
 
     /**
@@ -58,7 +61,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+        $category=Category::find($id);
+        $category->title=$request->title;
+        $category->description=$request->description;
+        $category->save();
+
+        return redirect()->back()->with('message','Data saved successfully');
     }
 
     /**
