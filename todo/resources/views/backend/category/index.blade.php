@@ -3,13 +3,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-      <div class="content-wrapper">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -35,33 +37,40 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-              <td> <a href="/category/create" class="btn btn-danger btn-sm mr-3">Add Category</a>
+                <td> <a href="/category/create" class="btn btn-danger btn-sm mr-3">Add Category</a>
 
               </div>
+              @if(session()->has('message'))
+              <div class="alert alert-success">
+                {{session()->get('message')}}
+
+              </div>
+              @endif
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
-                  <tr>
-                    <th>S.N.</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Action</th>
-                  </tr>
+                    <tr>
+                      <th>S.N.</th>
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>Action</th>
+                    </tr>
                   </thead>
                   <tbody>
                     @foreach($category as $c)
-                  <tr>
-                    <td>{{$c->id}}</td>
-                    <td>{{$c->title}}
-                    </td>
-                    <td>{{$c->description}}</td>
-                    <td> <a href="/category/edit/{{$c->id}}" class="btn btn-danger btn-sm mr-3">Edit</a>
-                    <a href="/category/delete/{{$c->id}}" class="btn btn-primary btn-sm">Delete</a></td>
+                    <tr>
+                      <td>{{$c->id}}</td>
+                      <td>{{$c->title}}
+                      </td>
+                      <td>{{$c->description}}</td>
+                      <td> <a href="/category/edit/{{$c->id}}" class="btn btn-danger btn-sm mr-3">Edit</a>
+                        <a href="/category/delete/{{$c->id}}" class="btn btn-primary btn-sm">Delete</a>
+                      </td>
 
-                  </tr>
-                @endforeach
-                </tbody>
+                    </tr>
+                    @endforeach
+                  </tbody>
                   </tfoot>
                 </table>
               </div>
@@ -82,5 +91,5 @@
   </div>
   @endsection
 </body>
-</html>
 
+</html>

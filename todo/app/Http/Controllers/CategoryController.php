@@ -13,9 +13,12 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
-        
         return view('backend.category.index', compact('category'));
-
+        // $category = new Category();
+        // $category->title = $request->title;
+        // $category->description = $request->description;
+        // $category->save();
+        // return redirect()->back()->with('message', 'Data deleted successfully');
     }
 
     /**
@@ -31,12 +34,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category=new Category();
-        $category->title=$request->title;
-        $category->description=$request->description;
-        $category->save();
+        $request->validate([
+            'title' => "required",
+            "description" => "required"
+        ]);
 
-        return redirect()->back()->with('message','Data saved successfully');
+        $category = new Category();
+        $category->title = $request->title;
+        $category->description = $request->description;
+        $category->save();
+        return redirect()->back()->with('message', 'Data saved successfully');
     }
 
     /**
@@ -61,12 +68,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $category=Category::find($id);
-        $category->title=$request->title;
-        $category->description=$request->description;
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->description = $request->description;
         $category->save();
 
-        return redirect()->back()->with('message','Data saved successfully');
+        return redirect()->back()->with('message', 'Data saved successfully');
     }
 
     /**
@@ -76,8 +83,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->back()->with('message','Data Deleted successfully');
-
-
+        return redirect()->back()->with('message', 'Data Deleted successfully');
     }
 }
