@@ -57,7 +57,7 @@ Route::get('/product/delete/{id}', [\App\Http\Controllers\ProductController::cla
 // Route::get('/product/form', [\App\Http\Controllers\ProductController::class, 'maformho']);
 
 
-
+// NEW LOGIN
 Route::get('/', function () {
     return view('welcome');
 });
