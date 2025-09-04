@@ -1,2 +1,2 @@
 <h1>This is About page</h1>
-{{ $name }}
+<h1>User name is {{ $name }}</h1>

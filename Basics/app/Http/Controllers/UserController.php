@@ -21,5 +21,9 @@ class UserController extends Controller
         function userHome(){
             return view('home');
         }
+        
+        function userAbout($name){
+            return view('about',['name'=>$name]);
+        }
     }
 }
